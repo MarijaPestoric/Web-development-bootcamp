@@ -1,0 +1,14 @@
+<%- include('partials/header');-%>
+<h1>Home</h1>
+<p><%= homeContent %></p>
+
+
+<% posts.forEach(function(post){ %>
+<h1><%= post.title %></h1>
+<% if (post.text.length > 50) { %>
+  <p><%= post.text.substring(0, 50) %>...<a href="/posts/ <%= post.title %>">Read Me</a></p>
+<% } else { %>
+  <p><%= post.text %></p>
+<% } %>
+
+<% }); %>
